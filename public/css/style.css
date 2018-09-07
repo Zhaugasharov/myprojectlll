@@ -1,0 +1,13 @@
+.header{
+    background: #e8f3ec;
+}
+.header>.first-menu{
+    height: 30px;
+    vertical-align: center;
+    background: #e7e7e7;
+    margin-bottom: 10px;
+}
+.header>.second-menu{
+    height: 50px;
+    vertical-align: center;
+}
