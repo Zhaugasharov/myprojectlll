@@ -1,13 +1,25 @@
 .header{
-    background: #e8f3ec;
+    position: relative;
+    min-height: 60px;
+    background: #f6f6f6;
+    border-bottom:0.5px solid #d6d6d6;
 }
-.header>.first-menu{
-    height: 30px;
-    vertical-align: center;
-    background: #e7e7e7;
-    margin-bottom: 10px;
+.bar{
+    position: relative;
+    padding: 5px 10px;
+    width: 100%;
+    background: #fdfdfd;
+    border: 0.5px solid #efefef;
+    border-radius: 3px;
 }
-.header>.second-menu{
-    height: 50px;
-    vertical-align: center;
+.underline-none{
+    text-decoration: none !important;
+}
+
+.btn-success.focus, .btn-success:focus {
+    box-shadow: none !important;
+}
+
+.btn-warning.focus, .btn-warning:focus {
+    box-shadow: none !important;
 }

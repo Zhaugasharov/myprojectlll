@@ -13,6 +13,11 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        Schema::create('roles', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('role');
+        });
+
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('sname')->nullable();
@@ -26,15 +31,11 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('role_id')->references('id')->on('roles');
         });
 
-        Schema::create('role', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('role');
-            $table->foreign('id')->references('role_id')->on('users');
-        });
-
-        Schema::create('phones', function (Blueprint $table) {
+        Schema::create('user_phones', function (Blueprint $table) {
             $table->increments('id');
             $table->string('phone');
             $table->integer('user_id')->nullable()->unsigned();
