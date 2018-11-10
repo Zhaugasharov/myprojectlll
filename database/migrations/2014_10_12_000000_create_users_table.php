@@ -13,35 +13,38 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('role');
-        });
+        if(!Schema::hasTable('roles')){
 
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('sname')->nullable();
-            $table->string('fname');
-            $table->string('pname')->nullable();
-            $table->string('email')->unique();
-            $table->string('google_key')->nullable();
-            $table->string('facebook_key')->nullable();
-            $table->string('instagram_key')->nullable();
-            $table->integer('role_id')->nullable()->unsigned()->foreign();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            Schema::create('roles', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('role');
+            });
 
-            $table->foreign('role_id')->references('id')->on('roles');
-        });
+            Schema::create('users', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('sname')->nullable();
+                $table->string('fname');
+                $table->string('pname')->nullable();
+                $table->string('email')->unique();
+                $table->string('google_key')->nullable();
+                $table->string('facebook_key')->nullable();
+                $table->string('instagram_key')->nullable();
+                $table->integer('role_id')->nullable()->unsigned()->foreign();
+                $table->string('password');
+                $table->rememberToken();
+                $table->timestamps();
 
-        Schema::create('user_phones', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('phone');
-            $table->integer('user_id')->nullable()->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-        });
+                $table->foreign('role_id')->references('id')->on('roles');
+            });
 
+            Schema::create('user_phones', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('phone');
+                $table->integer('user_id')->nullable()->unsigned();
+                $table->foreign('user_id')->references('id')->on('users');
+            });
+
+        }
     }
 
     /**

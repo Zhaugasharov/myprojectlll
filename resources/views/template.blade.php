@@ -15,7 +15,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2">
-                    <img src="{{asset('img/logo.png')}}" alt="">
+                    <a href="/">
+                        <img src="{{asset('img/logo.png')}}" alt="">
+                    </a>
                 </div>
                 <div class="col-md-10">
                     <div class="btn-group  dropleft float-right mt-3 mr-5">
@@ -27,7 +29,10 @@
                             <a class="dropdown-item" href="#">Sign up</a>
                         </div>
                     </div>
-                    <button class="btn mr-4 mt-3 btn-sm btn-outline-success float-right"><i class="fa fa-plus"></i> Add advert</button>
+                    <a href="/advert/save" class="btn mr-4 mt-3 btn-sm btn-outline-success float-right">
+                        <i class="fa fa-plus"></i> Add advert
+                    </a>
+
                 </div>
             </div>
         </div>

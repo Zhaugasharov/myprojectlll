@@ -23,3 +23,11 @@
 .btn-warning.focus, .btn-warning:focus {
     box-shadow: none !important;
 }
+
+.form-control:focus{
+    box-shadow: none !important;
+}
+
+.min-width-100{
+    min-width: 100px;
+}

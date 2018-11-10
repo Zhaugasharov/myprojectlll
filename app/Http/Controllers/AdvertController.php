@@ -11,8 +11,8 @@ namespace App\Http\Controllers;
 
 class AdvertController extends Controller
 {
-    public function add(){
+    public function save($id = null){
 
-        return view('');
+        return view('pages/advert/add');
     }
 }
